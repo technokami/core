@@ -75,7 +75,7 @@ async def test_if_fires_using_at_input_datetime(hass, calls, has_date, has_time)
         {"input_datetime": {"trigger": {"has_date": has_date, "has_time": has_time}}},
     )
 
-    now = dt_util.now()
+    now = dt_util.utcnow()
 
     trigger_dt = now.replace(
         hour=5 if has_time else 0, minute=0, second=0, microsecond=0
